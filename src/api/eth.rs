@@ -312,7 +312,7 @@ impl<T: Transport> Eth<T> {
     }
 
     /// Submit work of external miner
-    pub fn submit_work(&self, nonce: H64, pow_hash: H256, mix_hash: H256) -> CallFuture<bool, T::Out> {
+    pub fn submit_work(&self, nonce: U64, pow_hash: H256, mix_hash: H256) -> CallFuture<bool, T::Out> {
         let nonce = helpers::serialize(&nonce);
         let pow_hash = helpers::serialize(&pow_hash);
         let mix_hash = helpers::serialize(&mix_hash);
